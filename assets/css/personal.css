@@ -45,13 +45,7 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
 .portrait { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center; filter: saturate(.78) contrast(1.03); }
 .portrait-wrap::after { content: ""; position: absolute; inset: 14px -14px -14px 14px; border: 1px solid var(--line); z-index: -1; }
 
-.research-section { display: grid; grid-template-columns: .7fr 1.3fr; gap: clamp(44px, 8vw, 120px); border-top: 1px solid var(--line); padding: 72px 0 92px; }
-.research-section h2, .section-head h2, .weekly-index h1 { margin: 0; font-family: Georgia, "Times New Roman", "Songti SC", serif; font-weight: 400; letter-spacing: -.045em; }
-.research-section h2 { font-size: clamp(2.8rem, 5vw, 4.6rem); line-height: 1; }
-.research-copy { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; }
-.research-copy > div { border-top: 1px solid var(--line); padding-top: 16px; }
-.research-copy h3 { margin: 0 0 12px; font-size: .82rem; font-weight: 650; }
-.research-copy p { margin: 0; color: var(--muted); line-height: 1.8; }
+.section-head h2, .weekly-index h1 { margin: 0; font-family: Georgia, "Times New Roman", "Songti SC", serif; font-weight: 400; letter-spacing: -.045em; }
 
 .weekly-signal, .weekly-archive { border-top: 1px solid var(--line); padding: 72px 0 98px; }
 .section-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; }
@@ -82,6 +76,15 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
 .weekly-sources p { margin: 7px 0 0; color: var(--muted); font-size: .86rem; }
 .weekly-archive { border-top: 0; }
 .weekly-archive .section-head { margin-bottom: 34px; }
+
+.research-index { padding: 88px 0 110px; }
+.research-head { display: grid; grid-template-columns: 1.1fr .9fr; gap: 64px; align-items: end; padding-bottom: 76px; }
+.research-head h1 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(4.2rem, 9vw, 8rem); font-weight: 400; letter-spacing: -.055em; line-height: .9; }
+.research-head p { margin: 0 0 8px; color: var(--muted); font-size: 1.05rem; line-height: 1.8; }
+.research-list { border-top: 1px solid var(--line); }
+.research-list section { display: grid; grid-template-columns: .7fr 1.3fr; gap: 48px; padding: 34px 0; border-bottom: 1px solid var(--line); }
+.research-list h2 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.7rem, 3vw, 2.5rem); font-weight: 400; }
+.research-list p { margin: 7px 0 0; color: var(--muted); }
 
 .projects-index { padding: 88px 0 110px; }
 .projects-head { display: grid; grid-template-columns: 1.2fr .8fr; gap: 64px; align-items: end; padding-bottom: 76px; }
@@ -120,7 +123,7 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
   .hero { min-height: auto; grid-template-columns: 1fr; padding-top: 56px; }
   .hero-copy { max-width: 680px; }
   .portrait-wrap { width: min(78%, 420px); margin-left: auto; }
-  .research-section { grid-template-columns: 1fr; }
+  .research-head { grid-template-columns: 1fr; gap: 28px; }
   .weekly-index-head { grid-template-columns: 1fr; gap: 28px; }
   .projects-head { grid-template-columns: 1fr; gap: 28px; }
 }
@@ -134,8 +137,7 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
   .hero h1 { font-size: clamp(2.65rem, 12vw, 4rem); }
   .hero-lead { margin-top: 34px; }
   .portrait-wrap { width: calc(100% - 18px); }
-  .research-section, .weekly-signal { padding: 58px 0 72px; }
-  .research-copy { grid-template-columns: 1fr; gap: 28px; }
+  .weekly-signal { padding: 58px 0 72px; }
   .section-head { align-items: start; }
   .section-head h2 { font-size: 3.4rem; }
   .weekly-entry { grid-template-columns: 1fr 24px; gap: 10px 16px; }
@@ -147,6 +149,9 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
   .weekly-sources > div:last-child { border-bottom: 0; }
   .weekly-page { padding: 46px 0 78px; }
   .weekly-back { margin-bottom: 40px; }
+  .research-index { padding: 62px 0 80px; }
+  .research-head h1 { font-size: 4.2rem; }
+  .research-list section { grid-template-columns: 1fr; gap: 8px; }
   .projects-index { padding: 62px 0 80px; }
   .projects-head h1 { font-size: 4.2rem; }
   .project-row { grid-template-columns: 1fr 20px; gap: 14px; }

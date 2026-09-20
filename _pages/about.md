@@ -10,27 +10,13 @@ description: fakeswifter · 北京交通大学 2026 级硕士研究生 · 深圳
       <h1 id="hero-title" aria-label="我是 fakeswifter."><span class="typewriter" data-typewriter aria-hidden="true">我是 fakeswifter.</span></h1>
       <p class="hero-lead">北京交通大学 2026 级硕士研究生，本科毕业于深圳技术大学。Apple Swift Student Challenge 2024 Winner.</p>
       <div class="hero-links">
-        <a href="#research">Research</a>
+        <a href="{{ '/research/' | relative_url }}">Research</a>
         <a href="https://github.com/fakeswifter">GitHub <span aria-hidden="true">↗</span></a>
       </div>
     </div>
     <figure class="portrait-wrap">
       <img class="portrait" src="{{ '/assets/img/avatar.png' | relative_url }}" alt="fakeswifter 的头像" width="460" height="460">
     </figure>
-  </section>
-
-  <section class="research-section" id="research" aria-labelledby="research-heading">
-    <h2 id="research-heading">Research</h2>
-    <div class="research-copy">
-      <div>
-        <h3>Current work</h3>
-        <p>目前处于硕士研究阶段。研究课题、阶段性工作与公开材料会在适合公开时更新。</p>
-      </div>
-      <div>
-        <h3>Interests</h3>
-        <p>具体方向正在确认中。这里只保留确定后会长期投入的研究方向。</p>
-      </div>
-    </div>
   </section>
 
   <section class="weekly-signal" aria-labelledby="weekly-heading">

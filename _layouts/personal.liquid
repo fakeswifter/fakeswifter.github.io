@@ -19,7 +19,7 @@
         </a>
         <nav aria-label="主导航">
           <a href="{{ '/' | relative_url }}"{% if page.permalink == '/' %} aria-current="page"{% endif %}>关于</a>
-          <a href="{{ '/#research' | relative_url }}">Research</a>
+          <a href="{{ '/research/' | relative_url }}"{% if page.url contains '/research/' %} aria-current="page"{% endif %}>Research</a>
           <a href="{{ '/weekly/' | relative_url }}"{% if page.url contains '/weekly/' %} aria-current="page"{% endif %}>周记</a>
           <a href="{{ '/projects/' | relative_url }}"{% if page.url contains '/projects/' %} aria-current="page"{% endif %}>项目</a>
           <a href="https://github.com/fakeswifter">GitHub <span aria-hidden="true">↗</span></a>
