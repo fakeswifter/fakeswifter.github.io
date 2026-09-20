@@ -4,9 +4,9 @@ first_name: fakeswifter
 middle_name: ""
 last_name: ""
 contact_note: ""
-description: fakeswifter 的个人主页：项目、代码与观影记录。
+description: fakeswifter 的个人主页：自我介绍与每周记录。
 footer_text: 使用 <a href="https://github.com/alshedivat/al-folio">al-folio</a> 构建。
-keywords: fakeswifter, projects, 个人主页
+keywords: fakeswifter, 周记, BJTU, SZTU, 个人主页
 lang: zh-CN
 icon: "✦"
 apple_touch_icon:
@@ -51,7 +51,7 @@ al_folio:
     channel: stable
     auto_apply_safe_fixes: false
 navbar_fixed: true
-footer_fixed: true
+footer_fixed: false
 search_enabled: false
 socials_in_search: true
 posts_in_search: true
@@ -97,6 +97,9 @@ newsletter:
   enabled: false
   endpoint:
 collections:
+  weekly:
+    output: true
+    permalink: /weekly/:name/
   books:
     output: true
   news:
@@ -121,6 +124,12 @@ kramdown:
 include:
   - _pages
 exclude:
+  - scripts/
+  - tests/
+  - templates/
+  - work/
+  - weekly-drafts/
+  - weekly-data/
   - AGENTS.md
   - al-folio-upgrade-report.md
   - bin/
@@ -187,6 +196,12 @@ plugins:
   - al_marimo
   - al_rtl
 defaults:
+  - scope:
+      path: ""
+      type: weekly
+    values:
+      layout: weekly
+      published: false
   - scope:
       path: assets
     values:

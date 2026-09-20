@@ -1,0 +1,14 @@
+---
+layout: personal
+---
+<div class="weekly-page">
+  <article class="weekly-article">
+    <a class="weekly-back" href="{{ '/weekly/' | relative_url }}">← 所有周记</a>
+    <header>
+      <h1>{{ page.title | escape }}</h1>
+      <p class="weekly-dates"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y.%m.%d" }}</time>{% if page.period_label %} / {{ page.period_label | escape }}{% endif %}</p>
+      {% if page.description %}<p>{{ page.description | escape }}</p>{% endif %}
+    </header>
+    <div class="weekly-content">{{ content }}</div>
+  </article>
+</div>

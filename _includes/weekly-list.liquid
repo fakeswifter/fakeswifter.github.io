@@ -1,0 +1,22 @@
+{% assign public_weeklies = site.weekly | where: "published", true | sort: "date" | reverse %}
+{% if public_weeklies.size > 0 %}
+<ol class="weekly-list">
+  {% for entry in public_weeklies limit: include.limit %}
+  <li>
+    <a class="weekly-entry" href="{{ entry.url | relative_url }}">
+      <time datetime="{{ entry.date | date_to_xmlschema }}">{{ entry.date | date: "%Y.%m.%d" }}</time>
+      <div>
+        <h3>{{ entry.title | escape }}</h3>
+        {% if entry.description %}<p>{{ entry.description | escape }}</p>{% endif %}
+      </div>
+      <span class="weekly-arrow" aria-hidden="true">↗</span>
+    </a>
+  </li>
+  {% endfor %}
+</ol>
+{% else %}
+<div class="weekly-empty">
+  <span>00</span>
+  <p><strong>第一篇正在路上。</strong><br>周记会先生成草稿，经确认后出现在这里。</p>
+</div>
+{% endif %}
