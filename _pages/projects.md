@@ -8,7 +8,7 @@ nav_order: 3
 ---
 <div class="projects-index">
   <header class="projects-head">
-    <h1>一些正在发生的东西。</h1>
+    <h1 aria-label="一些正在发生的东西。"><span class="typewriter" data-typewriter aria-hidden="true">一些正在发生的东西。</span></h1>
     <p>公开项目与日常记录。</p>
   </header>
   <div class="project-list">

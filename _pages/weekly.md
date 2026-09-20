@@ -8,7 +8,7 @@ nav_order: 2
 ---
 <div class="weekly-index">
   <header class="weekly-index-head">
-    <h1>一周，一个切片。</h1>
+    <h1 aria-label="一周，一个切片。"><span class="typewriter" data-typewriter aria-hidden="true">一周，一个切片。</span></h1>
     <p>用 AI 整理主页访问、GitHub 动态，以及这一周新 Star 的开源项目。每一篇都会先成为草稿，由我确认后公开。</p>
   </header>
   <div class="weekly-sources" aria-label="周记数据来源">
