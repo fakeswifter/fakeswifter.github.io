@@ -9,18 +9,19 @@
     <link rel="canonical" href="{{ page.url | replace: 'index.html', '' | absolute_url }}">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✦</text></svg>">
     <link rel="stylesheet" href="{{ '/assets/css/personal.css' | relative_url }}">
+    <script defer src="{{ '/assets/js/typewriter.js' | relative_url }}"></script>
   </head>
   <body>
     <header class="site-header">
       <div class="site-frame site-nav">
         <a class="site-mark" href="{{ '/' | relative_url }}" aria-label="fakeswifter 首页">
-          <span aria-hidden="true">F</span>
-          <span class="site-name">fakeswifter</span>
+          fakeswifter
         </a>
         <nav aria-label="主导航">
           <a href="{{ '/' | relative_url }}"{% if page.permalink == '/' %} aria-current="page"{% endif %}>关于</a>
+          <a href="{{ '/#research' | relative_url }}">Research</a>
           <a href="{{ '/weekly/' | relative_url }}"{% if page.url contains '/weekly/' %} aria-current="page"{% endif %}>周记</a>
-          <a href="{{ '/projects/' | relative_url }}">项目</a>
+          <a href="{{ '/projects/' | relative_url }}"{% if page.url contains '/projects/' %} aria-current="page"{% endif %}>项目</a>
           <a href="https://github.com/fakeswifter">GitHub <span aria-hidden="true">↗</span></a>
         </nav>
       </div>
@@ -34,10 +35,9 @@
       <div class="site-frame footer-grid">
         <div>
           <strong>fakeswifter</strong>
-          <p>Student, builder, weekly observer.</p>
+          <p>BJTU 2026 · SZTU 2022</p>
         </div>
         <div class="footer-links">
-          <span>Explore</span>
           <a href="{{ '/weekly/' | relative_url }}">周记</a>
           <a href="https://github.com/fakeswifter">GitHub</a>
         </div>
