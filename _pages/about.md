@@ -10,6 +10,7 @@ description: fakeswifter · 北京交通大学 2026 级硕士研究生 · 深圳
       <h1 id="hero-title" aria-label="我是 fakeswifter."><span class="typewriter" data-typewriter aria-hidden="true">我是 fakeswifter.</span></h1>
       <p class="hero-lead">北京交通大学 2026 级硕士研究生，本科毕业于深圳技术大学。Apple Swift Student Challenge 2024 Winner.</p>
       <div class="hero-links">
+        <a href="{{ '/guess/' | relative_url }}">Guess <span aria-hidden="true">→</span></a>
         <a href="{{ '/research/' | relative_url }}">Research</a>
         <a href="https://github.com/fakeswifter">GitHub <span aria-hidden="true">↗</span></a>
       </div>
