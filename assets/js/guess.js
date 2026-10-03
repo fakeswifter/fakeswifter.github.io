@@ -89,7 +89,11 @@
     document.querySelectorAll(".crossword-cell").forEach((cell) => {
       cell.classList.toggle("is-active", includesKey(entry, cell.dataset.key));
     });
-    if (focus) inputs.get(positionsFor(entry)[0].key)?.focus();
+    if (focus) {
+      const positions = positionsFor(entry);
+      const target = positions.find((position) => !inputs.get(position.key)?.value) || positions[0];
+      inputs.get(target.key)?.focus();
+    }
   };
 
   const selectEntryForCell = (key, cycle = false) => {
@@ -103,10 +107,18 @@
     selectEntry(entryById(id), false);
   };
 
-  const moveWithinEntry = (key, step) => {
+  const moveWithinEntry = (key, step, skipFilled = false) => {
     const positions = positionsFor(activeEntry);
     const index = positions.findIndex((position) => position.key === key);
-    const next = positions[index + step];
+    let nextIndex = index + step;
+    while (
+      skipFilled &&
+      positions[nextIndex] &&
+      inputs.get(positions[nextIndex].key)?.value
+    ) {
+      nextIndex += step;
+    }
+    const next = positions[nextIndex];
     if (next) inputs.get(next.key)?.focus();
   };
 
@@ -157,7 +169,7 @@
     input.addEventListener("input", () => {
       input.value = input.value.replace(/[^a-z]/gi, "").slice(-1).toUpperCase();
       update();
-      if (input.value) moveWithinEntry(key, 1);
+      if (input.value) moveWithinEntry(key, 1, true);
     });
     input.addEventListener("keydown", (event) => {
       if (event.key === "Backspace" && !input.value) {
