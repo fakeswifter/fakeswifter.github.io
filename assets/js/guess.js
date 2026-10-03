@@ -3,17 +3,17 @@
   const form = document.querySelector(".crossword-form");
   if (!grid || !form) return;
 
-  const rows = 14;
-  const columns = 13;
+  const rows = 8;
+  const columns = 11;
   const entries = [
-    { id: "aurora", number: 1, answer: "AURORA", row: 0, column: 3, direction: "down", meta: "a" },
-    { id: "ocean", number: 2, answer: "OCEAN", row: 2, column: 1, direction: "down", meta: "o" },
-    { id: "galaxy", number: 3, answer: "GALAXY", row: 5, column: 0, direction: "across", meta: "g" },
-    { id: "yarn", number: 4, answer: "YARN", row: 5, column: 5, direction: "down", meta: "y" },
-    { id: "jungle", number: 5, answer: "JUNGLE", row: 5, column: 9, direction: "down", meta: "j" },
-    { id: "horizon", number: 6, answer: "HORIZON", row: 7, column: 3, direction: "across", meta: "h" },
-    { id: "island", number: 7, answer: "ISLAND", row: 9, column: 7, direction: "across", meta: "i" },
-    { id: "night", number: 8, answer: "NIGHT", row: 9, column: 11, direction: "down", meta: "n" },
+    { id: "galaxy", number: 1, answer: "GALAXY", row: 0, column: 6, direction: "down", meta: "g" },
+    { id: "yellow", number: 2, answer: "YELLOW", row: 1, column: 1, direction: "down", meta: "y" },
+    { id: "aurora", number: 3, answer: "AURORA", row: 1, column: 3, direction: "down", meta: "a" },
+    { id: "nature", number: 4, answer: "NATURE", row: 1, column: 5, direction: "across", meta: "n" },
+    { id: "harbor", number: 5, answer: "HARBOR", row: 3, column: 5, direction: "across", meta: "h" },
+    { id: "ocean", number: 6, answer: "OCEAN", row: 3, column: 9, direction: "down", meta: "o" },
+    { id: "journey", number: 7, answer: "JOURNEY", row: 5, column: 0, direction: "across", meta: "j" },
+    { id: "island", number: 8, answer: "ISLAND", row: 7, column: 5, direction: "across", meta: "i" },
   ];
 
   const cells = new Map();
