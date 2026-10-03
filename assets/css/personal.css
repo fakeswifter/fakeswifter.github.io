@@ -104,10 +104,10 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
 .guess-head p { margin: 0 0 8px; color: var(--muted); font-size: 1.05rem; line-height: 1.75; }
 .crossword-layout { display: grid; grid-template-columns: minmax(560px, 1.25fr) minmax(280px, .75fr); gap: clamp(48px, 7vw, 96px); border-top: 1px solid var(--line); padding-top: 42px; }
 .crossword-panel { min-width: 0; }
-.crossword-panel-head { display: flex; justify-content: space-between; align-items: baseline; width: min(100%, 560px); margin-bottom: 24px; }
+.crossword-panel-head { display: flex; justify-content: space-between; align-items: baseline; width: min(100%, 540px); margin-bottom: 24px; }
 .crossword-panel-head h2, .clue-group h2 { margin: 0; font-family: Georgia, "Times New Roman", "Songti SC", serif; font-size: 1.5rem; font-weight: 400; }
 .guess-progress { color: var(--muted); font: .75rem ui-monospace, SFMono-Regular, Menlo, monospace; }
-.crossword-grid { --cross-cell: clamp(20px, calc((100vw - 58px) / 13), 42px); display: grid; grid-template-columns: repeat(13, var(--cross-cell)); grid-template-rows: repeat(14, var(--cross-cell)); gap: 1px; width: max-content; border: 1px solid var(--ink); background: var(--ink); }
+.crossword-grid { --cross-cell: clamp(22px, calc((100vw - 54px) / 11), 48px); display: grid; grid-template-columns: repeat(11, var(--cross-cell)); grid-template-rows: repeat(8, var(--cross-cell)); gap: 1px; width: max-content; border: 1px solid var(--ink); background: var(--ink); }
 .crossword-block { display: block; background: var(--ink); }
 .crossword-cell { position: relative; display: block; background: #fff; transition: background .15s ease; }
 .crossword-cell.is-active { background: #f1eee5; }
@@ -170,7 +170,7 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
   .research-head { grid-template-columns: 1fr; gap: 28px; }
   .guess-head { grid-template-columns: 1fr; gap: 28px; }
   .crossword-layout { grid-template-columns: 1fr; }
-  .crossword-panel-head { width: min(100%, 560px); }
+  .crossword-panel-head { width: min(100%, 540px); }
   .crossword-side { grid-template-columns: 1fr 1fr; }
   .name-extract { grid-column: 1 / -1; }
   .weekly-index-head { grid-template-columns: 1fr; gap: 28px; }
