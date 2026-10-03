@@ -90,9 +90,9 @@
       cell.classList.toggle("is-active", includesKey(entry, cell.dataset.key));
     });
     if (focus) {
-      const positions = positionsFor(entry);
-      const target = positions.find((position) => !inputs.get(position.key)?.value) || positions[0];
-      inputs.get(target.key)?.focus();
+      const target = inputs.get(positionsFor(entry)[0].key);
+      target?.focus();
+      target?.select();
     }
   };
 
@@ -107,19 +107,13 @@
     selectEntry(entryById(id), false);
   };
 
-  const moveWithinEntry = (key, step, skipFilled = false) => {
+  const moveWithinEntry = (key, step) => {
     const positions = positionsFor(activeEntry);
     const index = positions.findIndex((position) => position.key === key);
-    let nextIndex = index + step;
-    while (
-      skipFilled &&
-      positions[nextIndex] &&
-      inputs.get(positions[nextIndex].key)?.value
-    ) {
-      nextIndex += step;
-    }
-    const next = positions[nextIndex];
-    if (next) inputs.get(next.key)?.focus();
+    const next = positions[index + step];
+    const nextInput = next ? inputs.get(next.key) : null;
+    nextInput?.focus();
+    nextInput?.select();
   };
 
   const moveByArrow = (key, keyName) => {
@@ -169,7 +163,7 @@
     input.addEventListener("input", () => {
       input.value = input.value.replace(/[^a-z]/gi, "").slice(-1).toUpperCase();
       update();
-      if (input.value) moveWithinEntry(key, 1, true);
+      if (input.value) moveWithinEntry(key, 1);
     });
     input.addEventListener("keydown", (event) => {
       if (event.key === "Backspace" && !input.value) {
