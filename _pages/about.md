@@ -8,7 +8,7 @@ description: fakeswifter · 北京交通大学 2026 级硕士研究生 · 深圳
   <section class="hero" aria-labelledby="hero-title">
     <div class="hero-copy">
       <h1 id="hero-title" aria-label="我是 fakeswifter."><span class="typewriter" data-typewriter aria-hidden="true">我是 fakeswifter.</span></h1>
-      <p class="hero-lead">北京交通大学 2026 级硕士研究生，本科毕业于深圳技术大学。Apple Swift Student Challenge 2024 Winner.</p>
+      <p class="hero-lead">BJTU 2026 / SZTU 2022. Apple Swift Student Challenge 2024 Winner.</p>
       <div class="hero-links">
         <a href="{{ '/guess/' | relative_url }}">Guess <span aria-hidden="true">→</span></a>
         <a href="{{ '/research/' | relative_url }}">Research</a>
@@ -27,7 +27,7 @@ description: fakeswifter · 北京交通大学 2026 级硕士研究生 · 深圳
       </div>
       <a class="view-all" href="{{ '/weekly/' | relative_url }}">全部周记 <span aria-hidden="true">→</span></a>
     </div>
-    <p class="weekly-intro">每周整理主页访问、GitHub 动态和新 Star 的开源项目。周日先生成草稿，确认后再公开。</p>
+    <p class="weekly-intro">每周整理主页访问、GitHub 动态和新 Star 的开源项目。</p>
     {% include weekly-list.liquid limit=3 %}
   </section>
 </div>
