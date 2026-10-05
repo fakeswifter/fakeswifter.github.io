@@ -12,7 +12,7 @@
   --frame: 1120px;
   --font-display: "Bricolage Grotesque Variable", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
   --font-body: "Newsreader Variable", Georgia, "Songti SC", "STSong", "SimSun", serif;
-  --font-mono: "JetBrains Mono Variable", var(--font-mono);
+  --font-mono: "JetBrains Mono Variable", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
 * { box-sizing: border-box; }
