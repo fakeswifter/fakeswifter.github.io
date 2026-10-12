@@ -1,0 +1,17 @@
+---
+layout: personal
+---
+<article class="blog-post">
+  <a class="blog-back" href="{{ '/blog/' | relative_url }}">← 全部文章</a>
+  <header class="blog-post-head">
+    <p class="blog-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y.%m.%d" }}</time>
+      {% if page.categories and page.categories.size > 0 %}<span aria-hidden="true"> · </span>{{ page.categories | join: " / " | escape }}{% endif %}
+    </p>
+    <h1>{{ page.title | escape }}</h1>
+    {% if page.description %}<p class="blog-deck">{{ page.description | escape }}</p>{% endif %}
+  </header>
+  <div class="blog-content">
+    {{ content }}
+  </div>
+</article>
