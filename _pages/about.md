@@ -20,14 +20,12 @@ description: fakeswifter · 北京交通大学 2026 级硕士研究生 · 深圳
     </figure>
   </section>
 
-  <section class="weekly-signal" aria-labelledby="weekly-heading">
+  <section class="blog-section" aria-labelledby="blog-heading">
     <div class="section-head">
-      <div>
-        <h2 id="weekly-heading">周记</h2>
-      </div>
-      <a class="view-all" href="{{ '/weekly/' | relative_url }}">全部周记 <span aria-hidden="true">→</span></a>
+      <h2 id="blog-heading">Blog</h2>
+      <a class="view-all" href="{{ '/blog/' | relative_url }}">全部文章 <span aria-hidden="true">→</span></a>
     </div>
-    <p class="weekly-intro">每周整理主页访问、GitHub 动态和新 Star 的开源项目。</p>
-    {% include weekly-list.liquid limit=3 %}
+    <p class="blog-intro">研究、代码与工具的记录。</p>
+    {% include post-list.liquid limit=3 %}
   </section>
 </div>

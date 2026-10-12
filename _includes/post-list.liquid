@@ -1,0 +1,21 @@
+{% assign blog_posts = site.posts | sort: "date" | reverse %}
+{% assign post_limit = include.limit | default: 1000 %}
+{% if blog_posts.size > 0 %}
+<ol class="post-list">
+  {% for post in blog_posts limit: post_limit %}
+  {% assign post_summary = post.description | default: post.excerpt | strip_html | truncate: 150 %}
+  <li>
+    <a class="post-entry" href="{{ post.url | relative_url }}">
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y.%m.%d" }}</time>
+      <div>
+        <h3>{{ post.title | escape }}</h3>
+        {% if post_summary != "" %}<p>{{ post_summary | escape }}</p>{% endif %}
+      </div>
+      <span class="post-arrow" aria-hidden="true">↗</span>
+    </a>
+  </li>
+  {% endfor %}
+</ol>
+{% else %}
+<div class="post-empty"><p>还没有公开文章。</p></div>
+{% endif %}
