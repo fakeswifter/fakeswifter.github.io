@@ -107,6 +107,9 @@ collections:
     output: true
   teachings:
     output: true
+  weekly_picks:
+    output: true
+    permalink: /picks/:title/
 markdown: kramdown
 highlighter: rouge
 kramdown:
@@ -197,6 +200,11 @@ defaults:
       path: assets
     values:
       sitemap: false
+  - scope:
+      path: ""
+      type: weekly_picks
+    values:
+      layout: pick
 sass:
   style: compressed
 jekyll-minifier:

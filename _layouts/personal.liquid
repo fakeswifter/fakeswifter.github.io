@@ -20,10 +20,10 @@
           fakeswifter
         </a>
         <nav aria-label="主导航">
-          <a class="nav-about" href="{{ '/' | relative_url }}"{% if page.permalink == '/' %} aria-current="page"{% endif %}>关于</a>
+          <a class="nav-about" href="{{ '/' | relative_url }}"{% if page.permalink == '/' %} aria-current="page"{% endif %}>Picks</a>
           <a class="nav-blog" href="{{ '/blog/' | relative_url }}"{% if page.url contains '/blog/' %} aria-current="page"{% endif %}>Blog</a>
           <a class="nav-research" href="{{ '/research/' | relative_url }}"{% if page.url contains '/research/' %} aria-current="page"{% endif %}>Research</a>
-          <a class="nav-projects" href="{{ '/projects/' | relative_url }}"{% if page.url contains '/projects/' %} aria-current="page"{% endif %}>项目</a>
+          <a class="nav-projects" href="{{ '/projects/' | relative_url }}"{% if page.url contains '/projects/' %} aria-current="page"{% endif %}>Projects</a>
           <a class="nav-github" href="https://github.com/fakeswifter">GitHub <span aria-hidden="true">↗</span></a>
         </nav>
       </div>
@@ -40,7 +40,8 @@
           <p>BJTU 2026 · SZTU 2022</p>
         </div>
         <div class="footer-links">
-          <a href="{{ '/blog/' | relative_url }}">文章</a>
+          <a href="{{ '/picks/' | relative_url }}">Archive</a>
+          <a href="{{ '/blog/' | relative_url }}">Blog</a>
           <a href="https://github.com/fakeswifter">GitHub</a>
         </div>
         <p class="footer-copy">© {{ site.time | date: '%Y' }} fakeswifter</p>

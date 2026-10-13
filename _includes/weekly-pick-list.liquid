@@ -1,0 +1,25 @@
+{% assign issue = include.issue %}
+{% assign categories = "book,film,music" | split: "," %}
+<div class="picks-list">
+  {% for category in categories %}
+    {% assign item = issue[category] %}
+    {% if item and item.title %}
+      {% case category %}
+        {% when "book" %}{% assign category_label = "Book" %}
+        {% when "film" %}{% assign category_label = "Film" %}
+        {% when "music" %}{% assign category_label = "Music" %}
+      {% endcase %}
+      <article class="picks-row">
+        <p class="picks-category">{{ category_label }}<span aria-hidden="true"> / 0{{ forloop.index }}</span></p>
+        <div class="picks-entry">
+          <h3>{{ item.title | escape }}</h3>
+          {% if item.creator %}<p class="picks-creator">{{ item.creator | escape }}</p>{% endif %}
+          {% if item.note %}<p class="picks-note">{{ item.note | escape }}</p>{% endif %}
+        </div>
+        {% if item.url %}
+          <a class="picks-open" href="{{ item.url | escape }}" target="_blank" rel="noopener noreferrer" aria-label="打开 {{ item.title | escape }} 的介绍">↗</a>
+        {% endif %}
+      </article>
+    {% endif %}
+  {% endfor %}
+</div>

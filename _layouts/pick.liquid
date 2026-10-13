@@ -1,0 +1,13 @@
+---
+layout: personal
+---
+<article class="weekly-issue">
+  <a class="issue-back" href="{{ '/picks/' | relative_url }}">← Archive</a>
+  <header class="weekly-issue-head">
+    <p class="section-kicker">WEEK {{ page.week }} · {{ page.date | date: "%Y" }}</p>
+    <h1 aria-label="{{ page.title | escape }}"><span class="typewriter" data-typewriter aria-hidden="true">{{ page.title | escape }}</span></h1>
+    <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%B %d, %Y" }}</time>
+  </header>
+  {% include weekly-pick-list.liquid issue=page %}
+  {% if content != empty %}<div class="weekly-issue-copy">{{ content }}</div>{% endif %}
+</article>
