@@ -11,13 +11,17 @@
       {% endcase %}
       <article class="picks-row">
         <p class="picks-category">{{ category_label }}</p>
-        <div class="picks-entry">
-          <h3>{{ item.title | escape }}</h3>
-          {% if item.creator %}<p class="picks-creator">{{ item.creator | escape }}</p>{% endif %}
-          {% if item.note %}<p class="picks-note">{{ item.note | escape }}</p>{% endif %}
-        </div>
+        {% if item.cover %}
+          <img class="picks-cover" src="{{ item.cover | escape }}" alt="{{ item.title | escape }} 封面" loading="lazy" decoding="async">
+        {% else %}
+          <div class="picks-cover-empty" aria-hidden="true"></div>
+        {% endif %}
+        <h3 class="picks-name">{{ item.title | escape }}</h3>
+        <p class="picks-creator">{{ item.creator | default: "" | escape }}</p>
         {% if item.url %}
           <a class="picks-open" href="{{ item.url | escape }}" target="_blank" rel="noopener noreferrer" aria-label="打开 {{ item.title | escape }} 的介绍">↗</a>
+        {% else %}
+          <span class="picks-open" aria-hidden="true">↗</span>
         {% endif %}
       </article>
     {% endif %}
