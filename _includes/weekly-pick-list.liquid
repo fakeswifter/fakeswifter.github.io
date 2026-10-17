@@ -10,7 +10,7 @@
         {% when "music" %}{% assign category_label = "Music" %}
       {% endcase %}
       <article class="picks-row">
-        <p class="picks-category">{{ category_label }}<span aria-hidden="true"> / 0{{ forloop.index }}</span></p>
+        <p class="picks-category">{{ category_label }}</p>
         <div class="picks-entry">
           <h3>{{ item.title | escape }}</h3>
           {% if item.creator %}<p class="picks-creator">{{ item.creator | escape }}</p>{% endif %}
