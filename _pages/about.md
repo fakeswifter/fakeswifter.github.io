@@ -5,21 +5,35 @@ permalink: /
 description: fakeswifter 的每周书影音分享与个人主页。
 ---
 {% assign current_issue = site.weekly_picks | sort: "date" | reverse | first %}
-<section class="weekly-picks-home" aria-labelledby="weekly-picks-title">
-  <header class="weekly-picks-heading">
-    <h1 id="weekly-picks-title" aria-label="Weekly Picks"><span class="typewriter" data-typewriter aria-hidden="true">Weekly Picks</span></h1>
-    {% if current_issue %}<p class="weekly-picks-week">WEEK {{ current_issue.week }} · {{ current_issue.date | date: "%Y" }}</p>{% endif %}
-    <a class="weekly-picks-archive" href="{{ '/picks/' | relative_url }}">Archive <span aria-hidden="true">→</span></a>
-  </header>
-  {% if current_issue %}
-    {% include weekly-pick-list.liquid issue=current_issue %}
-  {% endif %}
+<section id="window" class="window-stage" role="region" tabindex="0" aria-labelledby="weekly-picks-title" aria-description="点击窗面空白处进入主页；也可按回车或空格">
+  <div class="shutter shutter-left" aria-hidden="true"></div><div class="shutter shutter-right" aria-hidden="true"></div>
+  <div class="window-content"><div class="pick-center">
+    <h1 id="weekly-picks-title">Weekly Picks</h1>
+    <div class="picks-list window-pick-list">
+      {% assign pick_categories = "book,film,music" | split: "," %}
+      {% if current_issue %}{% for category in pick_categories %}
+        {% assign item = current_issue[category] %}
+        {% if item and item.title %}
+          {% case category %}
+            {% when "book" %}{% assign category_label = "Book" %}
+            {% when "film" %}{% assign category_label = "Film" %}
+            {% when "music" %}{% assign category_label = "Music" %}
+          {% endcase %}
+          {% if item.url %}<a class="picks-row" href="{{ item.url | escape }}" target="_blank" rel="noopener noreferrer">{% else %}<article class="picks-row">{% endif %}
+            <p class="picks-category">{{ category_label }}</p>
+            {% if item.cover %}<img class="picks-cover" src="{{ item.cover | relative_url | escape }}" alt="{{ item.title | escape }} 封面" width="104" height="104" decoding="async">{% else %}<span class="picks-cover-empty" aria-hidden="true"></span>{% endif %}
+            <h2 class="picks-name">{{ item.title | escape }}</h2><p class="picks-creator">{{ item.creator | default: "" | escape }}</p><span class="picks-open" aria-hidden="true">↗</span>
+          {% if item.url %}</a>{% else %}</article>{% endif %}
+        {% endif %}
+      {% endfor %}{% endif %}
+    </div>
+  </div></div>
 </section>
+<div id="homepage" class="home-page" aria-hidden="true" inert>
 
-<div class="home-page">
   <section class="hero" aria-labelledby="hero-title">
     <div class="hero-copy">
-      <h2 id="hero-title" aria-label="我是 fakeswifter."><span class="typewriter" data-typewriter aria-hidden="true">我是 fakeswifter.</span></h2>
+      <h2 id="hero-title" tabindex="-1" aria-label="我是 fakeswifter."><span class="typewriter" data-typewriter aria-hidden="true">我是 fakeswifter.</span></h2>
       <p class="hero-lead">BJTU 2026 / SZTU 2022. Apple Swift Student Challenge 2024 Winner.</p>
       <div class="hero-links">
         <a href="{{ '/guess/' | relative_url }}">Guess <span aria-hidden="true">→</span></a>
@@ -41,3 +55,6 @@ description: fakeswifter 的每周书影音分享与个人主页。
     {% include post-list.liquid limit=3 %}
   </section>
 </div>
+
+<canvas id="water-canvas" class="water-canvas" aria-hidden="true"></canvas>
+<script defer src="{{ '/assets/js/water-window.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
