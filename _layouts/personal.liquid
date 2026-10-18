@@ -20,7 +20,7 @@
           fakeswifter
         </a>
         <nav aria-label="主导航">
-          <a class="nav-about" href="{{ '/' | relative_url }}"{% if page.permalink == '/' %} aria-current="page"{% endif %}>Picks</a>
+          <a class="nav-about" href="{{ '/picks/' | relative_url }}"{% if page.url contains '/picks/' %} aria-current="page"{% endif %}>Weekly Picks</a>
           <a class="nav-blog" href="{{ '/blog/' | relative_url }}"{% if page.url contains '/blog/' %} aria-current="page"{% endif %}>Blog</a>
           <a class="nav-research" href="{{ '/research/' | relative_url }}"{% if page.url contains '/research/' %} aria-current="page"{% endif %}>Research</a>
           <a class="nav-projects" href="{{ '/projects/' | relative_url }}"{% if page.url contains '/projects/' %} aria-current="page"{% endif %}>Projects</a>

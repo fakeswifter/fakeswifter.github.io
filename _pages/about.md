@@ -5,7 +5,7 @@ permalink: /
 description: fakeswifter 的每周书影音分享与个人主页。
 ---
 {% assign current_issue = site.weekly_picks | sort: "date" | reverse | first %}
-<section id="window" class="window-stage" role="region" tabindex="0" aria-labelledby="weekly-picks-title" aria-description="点击窗面空白处进入主页；也可按回车或空格">
+<section id="window" class="window-stage" role="region" tabindex="0" aria-labelledby="weekly-picks-title" aria-description="点击窗面空白处进入主页；进入后可从右上角 Weekly Picks 访问推荐归档；也可按回车或空格进入">
   <div class="shutter shutter-left" aria-hidden="true"></div><div class="shutter shutter-right" aria-hidden="true"></div>
   <div class="window-content"><div class="pick-center">
     <h1 id="weekly-picks-title">Weekly Picks</h1>
@@ -42,7 +42,7 @@ description: fakeswifter 的每周书影音分享与个人主页。
       </div>
     </div>
     <figure class="portrait-wrap">
-      <img class="portrait" src="{{ '/assets/img/avatar.png' | relative_url }}" alt="fakeswifter 的头像" width="460" height="460">
+      <img class="portrait" src="{{ '/assets/img/avatar.jpg' | relative_url }}" alt="fakeswifter 的头像" width="460" height="460">
     </figure>
   </section>
 

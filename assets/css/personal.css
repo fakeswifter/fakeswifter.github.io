@@ -48,7 +48,7 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
 .hero-links { display: flex; flex-wrap: wrap; gap: 28px; margin-top: 34px; }
 .hero-links a { font-size: .9rem; font-weight: 600; }
 .portrait-wrap { position: relative; width: min(100%, 340px); justify-self: end; margin: 0; }
-.portrait { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center; filter: grayscale(1) contrast(1.03); }
+.portrait { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; object-position: center; filter: none; }
 .portrait-wrap::after { content: ""; position: absolute; inset: 14px -14px -14px 14px; border: 1px solid var(--line); z-index: -1; }
 
 
@@ -315,7 +315,7 @@ body.is-closed{overflow:hidden}body.is-open{overflow-x:hidden;overflow-y:auto}
 .window-stage.is-pressed .shutter{filter:brightness(.985)}.window-stage.is-open::after{opacity:0}
 body.is-open .window-stage{pointer-events:none;visibility:hidden;transition:visibility 0s linear 1.3s}
 body.is-closed .window-stage{visibility:visible;transition:visibility 0s}
-.water-canvas{position:fixed;z-index:1001;inset:0;width:100vw;height:100vh;opacity:.72;mix-blend-mode:soft-light;pointer-events:none}
+.water-canvas{position:fixed;z-index:1001;inset:0;width:100vw;height:100vh;opacity:1;mix-blend-mode:normal;pointer-events:none}
 @media(max-width:700px){
  .window-stage::after{inset:9px}.shutter{width:50.35%;-webkit-backdrop-filter:blur(30px) saturate(.22);backdrop-filter:blur(30px) saturate(.22);box-shadow:inset -1px 0 rgba(15,15,15,.2),inset 0 0 0 8px rgba(255,255,255,.4)}
  .shutter-right{box-shadow:inset 1px 0 rgba(15,15,15,.2),inset 0 0 0 8px rgba(255,255,255,.4)}.shutter::before,.shutter::after{inset:17px}
