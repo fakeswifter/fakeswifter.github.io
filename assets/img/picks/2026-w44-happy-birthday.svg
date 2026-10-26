@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+<rect width="400" height="400" fill="#f4f4f1"/>
+<rect x="24" y="24" width="352" height="352" fill="none" stroke="#171717" stroke-width="2"/>
+<path d="M200 67v62M183 68h34M185 129h30l17 25h-64z" fill="none" stroke="#171717" stroke-width="3"/>
+<path d="M133 156h134v87H133z" fill="#fff" stroke="#171717" stroke-width="3"/>
+<path d="M133 183h134M133 211h134" stroke="#171717" stroke-width="2"/>
+<circle cx="200" cy="174" r="4" fill="#171717"/>
+<text x="42" y="294" fill="#171717" font-family="serif" font-size="48">生日快乐</text>
+<text x="44" y="329" fill="#555" font-family="monospace" font-size="14" letter-spacing="2">HAPPY BIRTHDAY</text>
+<text x="44" y="354" fill="#777" font-family="monospace" font-size="10" letter-spacing="1">SARAH GOHER · 2025</text>
+</svg>
