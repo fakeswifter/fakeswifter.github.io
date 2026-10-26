@@ -8,7 +8,7 @@
       <article class="picks-row">
         <p class="picks-category">{{ item.category | default: "Pick" | escape }}</p>
         {% if item.cover %}
-          <img class="picks-cover" src="{{ item_cover | escape }}" alt="{{ item.title | escape }} 配图" loading="lazy" decoding="async">
+          <img class="picks-cover" src="{{ item_cover | escape }}" alt="{{ item.title | escape }} 配图" loading="lazy" decoding="async"{% if item.fallback %} onerror="this.onerror=null;this.src='{{ item.fallback | relative_url | escape }}'"{% endif %}>
         {% else %}
           <div class="picks-cover-empty" aria-hidden="true"></div>
         {% endif %}
@@ -35,7 +35,7 @@
         <article class="picks-row">
           <p class="picks-category">{{ category_label }}</p>
           {% if item.cover %}
-            <img class="picks-cover" src="{{ item_cover | escape }}" alt="{{ item.title | escape }} 配图" loading="lazy" decoding="async">
+            <img class="picks-cover" src="{{ item_cover | escape }}" alt="{{ item.title | escape }} 配图" loading="lazy" decoding="async"{% if item.fallback %} onerror="this.onerror=null;this.src='{{ item.fallback | relative_url | escape }}'"{% endif %}>
           {% else %}
             <div class="picks-cover-empty" aria-hidden="true"></div>
           {% endif %}
