@@ -16,7 +16,7 @@ description: fakeswifter 的每周书影音分享与个人主页。
           {% unless item.cover contains '://' %}{% assign item_cover = item.cover | relative_url %}{% endunless %}
           {% if item.url %}<a class="picks-row" href="{{ item.url | escape }}" target="_blank" rel="noopener noreferrer">{% else %}<article class="picks-row">{% endif %}
             <p class="picks-category">{{ item.category | default: "Pick" | escape }}</p>
-            {% if item.cover %}<img class="picks-cover" src="{{ item_cover | escape }}" alt="{{ item.title | escape }} 配图" width="104" height="104" decoding="async">{% else %}<span class="picks-cover-empty" aria-hidden="true"></span>{% endif %}
+            {% if item.cover %}<img class="picks-cover" src="{{ item_cover | escape }}" alt="{{ item.title | escape }} 配图" width="104" height="104" decoding="async"{% if item.fallback %} onerror="this.onerror=null;this.src='{{ item.fallback | relative_url | escape }}'"{% endif %}>{% else %}<span class="picks-cover-empty" aria-hidden="true"></span>{% endif %}
             <h2 class="picks-name">{{ item.title | escape }}</h2><p class="picks-creator">{{ item.creator | default: "" | escape }}</p><span class="picks-open" aria-hidden="true">↗</span>
           {% if item.url %}</a>{% else %}</article>{% endif %}
         {% endfor %}
@@ -34,7 +34,7 @@ description: fakeswifter 的每周书影音分享与个人主页。
             {% unless item.cover contains '://' %}{% assign item_cover = item.cover | relative_url %}{% endunless %}
             {% if item.url %}<a class="picks-row" href="{{ item.url | escape }}" target="_blank" rel="noopener noreferrer">{% else %}<article class="picks-row">{% endif %}
               <p class="picks-category">{{ category_label }}</p>
-              {% if item.cover %}<img class="picks-cover" src="{{ item_cover | escape }}" alt="{{ item.title | escape }} 配图" width="104" height="104" decoding="async">{% else %}<span class="picks-cover-empty" aria-hidden="true"></span>{% endif %}
+              {% if item.cover %}<img class="picks-cover" src="{{ item_cover | escape }}" alt="{{ item.title | escape }} 配图" width="104" height="104" decoding="async"{% if item.fallback %} onerror="this.onerror=null;this.src='{{ item.fallback | relative_url | escape }}'"{% endif %}>{% else %}<span class="picks-cover-empty" aria-hidden="true"></span>{% endif %}
               <h2 class="picks-name">{{ item.title | escape }}</h2><p class="picks-creator">{{ item.creator | default: "" | escape }}</p><span class="picks-open" aria-hidden="true">↗</span>
             {% if item.url %}</a>{% else %}</article>{% endif %}
           {% endif %}
