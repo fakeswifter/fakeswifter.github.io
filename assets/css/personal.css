@@ -329,3 +329,18 @@ body.is-closed .window-stage{visibility:visible;transition:visibility 0s}
  .window-pick-list .picks-cover,.window-pick-list .picks-cover-empty{width:49px;height:49px}.window-pick-list .picks-name{font-size:16px}.window-pick-list .picks-creator{font-size:10px}
 }
 @media(prefers-reduced-motion:reduce){.window-stage *, .window-stage *::before, .window-stage *::after, .water-canvas{transition-duration:.01ms!important;animation-duration:.01ms!important}}
+
+
+/* Four Weekly Picks rows fit within the opening window. */
+@media (min-width: 701px) {
+  .window-content { padding-block: clamp(20px, 3.4vh, 36px); }
+  .pick-center h1 { margin-bottom: clamp(16px, 2.8vh, 28px); font-size: clamp(54px, 9vh, 108px); }
+  .window-pick-list .picks-row {
+    grid-template-columns: 78px 82px minmax(0, 1fr) minmax(112px, .35fr) 24px;
+    gap: clamp(12px, 1.8vw, 22px);
+    min-height: clamp(80px, 11vh, 104px);
+    padding: 8px 0;
+  }
+  .window-pick-list .picks-cover, .window-pick-list .picks-cover-empty { width: 72px; height: 72px; }
+  .window-pick-list .picks-name { font-size: clamp(21px, 2.8vw, 32px); }
+}
