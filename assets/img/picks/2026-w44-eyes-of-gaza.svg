@@ -1,10 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
 <rect width="400" height="400" fill="#f4f4f1"/>
 <rect x="24" y="24" width="352" height="352" fill="none" stroke="#171717" stroke-width="2"/>
-<path d="M66 151c36-48 78-70 134-70s98 22 134 70c-36 49-78 71-134 71s-98-22-134-71Z" fill="none" stroke="#171717" stroke-width="3"/>
-<circle cx="200" cy="151" r="39" fill="none" stroke="#171717" stroke-width="3"/>
-<circle cx="200" cy="151" r="12" fill="#171717"/>
-<path d="M91 238v32m35-45v45m36-34v34m76-37v37m34-53v53m38-67v67" stroke="#777" stroke-width="2"/>
-<text x="43" y="311" fill="#171717" font-family="monospace" font-size="26" letter-spacing="1">EYES OF GAZA</text>
-<text x="45" y="345" fill="#555" font-family="monospace" font-size="12" letter-spacing="1">加沙之眼 · 2024</text>
+<path d="M62 142c34-44 77-68 138-68s104 24 138 68c-34 44-77 68-138 68s-104-24-138-68Z" fill="none" stroke="#171717" stroke-width="3"/>
+<path d="M124 142c22-22 47-34 76-34s54 12 76 34c-22 22-47 34-76 34s-54-12-76-34Z" fill="none" stroke="#777" stroke-width="2"/>
+<circle cx="200" cy="142" r="12" fill="#171717"/>
+<path d="M68 233h264M68 249h194" stroke="#aaa" stroke-width="1"/>
+<text x="43" y="293" fill="#171717" font-family="serif" font-size="46">加沙之眼</text>
+<text x="45" y="328" fill="#555" font-family="monospace" font-size="12" letter-spacing="1">THE EYES OF GAZA</text>
+<text x="45" y="354" fill="#777" font-family="monospace" font-size="11" letter-spacing="1">PLESTIA ALAQAD</text>
 </svg>
