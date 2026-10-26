@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
 <rect width="400" height="400" fill="#f4f4f1"/>
 <rect x="24" y="24" width="352" height="352" fill="none" stroke="#171717" stroke-width="2"/>
-<path d="M200 67v62M183 68h34M185 129h30l17 25h-64z" fill="none" stroke="#171717" stroke-width="3"/>
-<path d="M133 156h134v87H133z" fill="#fff" stroke="#171717" stroke-width="3"/>
-<path d="M133 183h134M133 211h134" stroke="#171717" stroke-width="2"/>
-<circle cx="200" cy="174" r="4" fill="#171717"/>
-<text x="42" y="294" fill="#171717" font-family="serif" font-size="48">生日快乐</text>
-<text x="44" y="329" fill="#555" font-family="monospace" font-size="14" letter-spacing="2">HAPPY BIRTHDAY</text>
-<text x="44" y="354" fill="#777" font-family="monospace" font-size="10" letter-spacing="1">SARAH GOHER · 2025</text>
+<path d="M42 194h316M64 180l30-28 26 23 32-41 31 31 37-58 35 67 25-29 56 48" fill="none" stroke="#777" stroke-width="2"/>
+<path d="M109 189v55m17-55v55m17-55v55m17-55v55m17-55v55m17-55v55m17-55v55" stroke="#171717" stroke-width="2"/>
+<circle cx="250" cy="144" r="25" fill="none" stroke="#171717" stroke-width="2"/>
+<path d="M247 126c-18 20-14 44 11 55" fill="none" stroke="#777" stroke-width="2"/>
+<text x="43" y="291" fill="#171717" font-family="serif" font-size="46">生日快乐</text>
+<text x="45" y="326" fill="#555" font-family="monospace" font-size="14" letter-spacing="2">HAPPY BIRTHDAY</text>
+<text x="45" y="354" fill="#777" font-family="monospace" font-size="11" letter-spacing="1">JINGLE MA · 2007</text>
 </svg>
