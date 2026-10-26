@@ -10,22 +10,36 @@ description: fakeswifter 的每周书影音分享与个人主页。
   <div class="window-content"><div class="pick-center">
     <h1 id="weekly-picks-title">Weekly Picks</h1>
     <div class="picks-list window-pick-list">
-      {% assign pick_categories = "book,film,music" | split: "," %}
-      {% if current_issue %}{% for category in pick_categories %}
-        {% assign item = current_issue[category] %}
-        {% if item and item.title %}
-          {% case category %}
-            {% when "book" %}{% assign category_label = "Book" %}
-            {% when "film" %}{% assign category_label = "Film" %}
-            {% when "music" %}{% assign category_label = "Music" %}
-          {% endcase %}
+      {% if current_issue and current_issue.picks %}
+        {% for item in current_issue.picks %}
+          {% assign item_cover = item.cover %}
+          {% unless item.cover contains '://' %}{% assign item_cover = item.cover | relative_url %}{% endunless %}
           {% if item.url %}<a class="picks-row" href="{{ item.url | escape }}" target="_blank" rel="noopener noreferrer">{% else %}<article class="picks-row">{% endif %}
-            <p class="picks-category">{{ category_label }}</p>
-            {% if item.cover %}<img class="picks-cover" src="{{ item.cover | relative_url | escape }}" alt="{{ item.title | escape }} 封面" width="104" height="104" decoding="async">{% else %}<span class="picks-cover-empty" aria-hidden="true"></span>{% endif %}
+            <p class="picks-category">{{ item.category | default: "Pick" | escape }}</p>
+            {% if item.cover %}<img class="picks-cover" src="{{ item_cover | escape }}" alt="{{ item.title | escape }} 配图" width="104" height="104" decoding="async">{% else %}<span class="picks-cover-empty" aria-hidden="true"></span>{% endif %}
             <h2 class="picks-name">{{ item.title | escape }}</h2><p class="picks-creator">{{ item.creator | default: "" | escape }}</p><span class="picks-open" aria-hidden="true">↗</span>
           {% if item.url %}</a>{% else %}</article>{% endif %}
-        {% endif %}
-      {% endfor %}{% endif %}
+        {% endfor %}
+      {% else %}
+        {% assign pick_categories = "book,film,music" | split: "," %}
+        {% if current_issue %}{% for category in pick_categories %}
+          {% assign item = current_issue[category] %}
+          {% if item and item.title %}
+            {% case category %}
+              {% when "book" %}{% assign category_label = "Book" %}
+              {% when "film" %}{% assign category_label = "Film" %}
+              {% when "music" %}{% assign category_label = "Music" %}
+            {% endcase %}
+            {% assign item_cover = item.cover %}
+            {% unless item.cover contains '://' %}{% assign item_cover = item.cover | relative_url %}{% endunless %}
+            {% if item.url %}<a class="picks-row" href="{{ item.url | escape }}" target="_blank" rel="noopener noreferrer">{% else %}<article class="picks-row">{% endif %}
+              <p class="picks-category">{{ category_label }}</p>
+              {% if item.cover %}<img class="picks-cover" src="{{ item_cover | escape }}" alt="{{ item.title | escape }} 配图" width="104" height="104" decoding="async">{% else %}<span class="picks-cover-empty" aria-hidden="true"></span>{% endif %}
+              <h2 class="picks-name">{{ item.title | escape }}</h2><p class="picks-creator">{{ item.creator | default: "" | escape }}</p><span class="picks-open" aria-hidden="true">↗</span>
+            {% if item.url %}</a>{% else %}</article>{% endif %}
+          {% endif %}
+        {% endfor %}{% endif %}
+      {% endif %}
     </div>
   </div></div>
 </section>
