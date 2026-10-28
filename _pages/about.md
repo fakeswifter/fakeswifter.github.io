@@ -56,7 +56,7 @@ description: fakeswifter 的每周书影音分享与个人主页。
       </div>
     </div>
     <figure class="portrait-wrap">
-      <img class="portrait" src="{{ '/assets/img/avatar.jpg' | relative_url }}" alt="fakeswifter 的头像" width="460" height="460">
+      <img class="portrait" src="{{ '/assets/img/avatar.jpg' | relative_url }}" alt="fakeswifter 的头像" width="616" height="827">
     </figure>
   </section>
 
