@@ -70,5 +70,4 @@ description: fakeswifter 的每周书影音分享与个人主页。
   </section>
 </div>
 
-<canvas id="water-canvas" class="water-canvas" aria-hidden="true"></canvas>
 <script defer src="{{ '/assets/js/water-window.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>

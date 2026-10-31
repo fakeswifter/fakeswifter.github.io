@@ -1,15 +1,16 @@
 @import url("https://cdn.jsdelivr.net/fontsource/css/jetbrains-mono:vf@5.3.0/latin.min.css");
 
 :root {
-  --paper: #ffffff;
-  --ink: #111111;
-  --muted: #666666;
-  --line: #dddddd;
-  --accent: #111111;
-  --panel: #f5f5f5;
+  --paper: #f4f5f2;
+  --ink: #171a1e;
+  --muted: #656c72;
+  --line: #d3d7d6;
+  --accent: #3b5685;
+  --panel: #e9ece9;
   --frame: 1120px;
   --font-display: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
   --font-body: var(--font-display);
+  --font-literary: "Iowan Old Style", "Baskerville", "Palatino Linotype", "Songti SC", "STSong", serif;
   --font-mono: "JetBrains Mono Variable", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
@@ -238,10 +239,10 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
 .weekly-picks-archive:hover { color: var(--ink); }
 .picks-list { border-top: 1px solid var(--ink); }
 .picks-row { display: grid; grid-template-columns: 78px 62px minmax(0, 1fr) minmax(112px, .34fr) 24px; align-items: center; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--line); }
-.picks-category { margin: 0; color: var(--muted); font: 600 .69rem/1.3 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; }
+.picks-category { margin: 0; color: var(--accent); font: 600 .69rem/1.3 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; }
 .picks-cover, .picks-cover-empty { display: block; width: 60px; height: 72px; background: var(--panel); }
 .picks-cover { object-fit: contain; }
-.picks-name { min-width: 0; margin: 0; font-size: clamp(1.08rem, 2vw, 1.35rem); font-weight: 500; line-height: 1.35; letter-spacing: -.025em; }
+.picks-name { min-width: 0; margin: 0; font-size: clamp(1.08rem, 2vw, 1.35rem); font-weight: 500; line-height: 1.35; letter-spacing: 0; }
 .picks-creator { min-width: 0; margin: 0; color: var(--muted); font-size: .86rem; }
 .picks-open { justify-self: end; color: var(--muted); font-size: 1rem; text-decoration: none; }
 .picks-open:hover { color: var(--ink); }
@@ -289,58 +290,173 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
 }
 
 
-/* Full-screen frosted window with water trails and click-to-open ripples. */
-:root{--window-serif:"Iowan Old Style","Baskerville","Times New Roman","Songti SC",serif}
-body.is-closed{overflow:hidden}body.is-open{overflow-x:hidden;overflow-y:auto}
-.window-stage{position:fixed;z-index:1000;inset:0;overflow:hidden;perspective:1700px;background:transparent;cursor:pointer}
-.window-stage::after{position:absolute;inset:13px;z-index:4;border:1px solid rgba(20,20,20,.42);box-shadow:inset 0 0 0 8px rgba(255,255,255,.18);content:"";pointer-events:none;transition:opacity .65s ease .2s}
-.shutter{position:absolute;inset:0 auto 0 0;width:50.15%;transform:rotateY(0);transform-origin:left center;transform-style:preserve-3d;backface-visibility:hidden;background:linear-gradient(123deg,rgba(255,255,255,.76),rgba(244,244,241,.78) 54%,rgba(251,251,249,.74));-webkit-backdrop-filter:blur(34px) saturate(.22);backdrop-filter:blur(34px) saturate(.22);box-shadow:inset -1px 0 rgba(15,15,15,.22),inset 0 0 0 13px rgba(255,255,255,.38);transition:transform 1.28s cubic-bezier(.2,.74,.18,1),background-color .2s ease}
-.shutter::before{position:absolute;inset:24px;border:1px solid rgba(25,25,25,.24);content:""}
-.shutter::after{position:absolute;inset:24px;background-image:linear-gradient(90deg,transparent calc(50% - .5px),rgba(25,25,25,.18) 50%,transparent calc(50% + .5px)),linear-gradient(0deg,transparent calc(50% - .5px),rgba(25,25,25,.18) 50%,transparent calc(50% + .5px));content:""}
-.shutter-right{inset:0 0 0 auto;transform-origin:right center;background:linear-gradient(237deg,rgba(255,255,255,.76),rgba(244,244,241,.78) 54%,rgba(251,251,249,.74));box-shadow:inset 1px 0 rgba(15,15,15,.22),inset 0 0 0 13px rgba(255,255,255,.38)}
-.window-stage.is-open .shutter-left{transform:rotateY(-104deg)}.window-stage.is-open .shutter-right{transform:rotateY(104deg)}
-.window-content{position:absolute;z-index:5;inset:0;display:flex;flex-direction:column;justify-content:center;padding:clamp(34px,5.2vw,76px) clamp(36px,8.2vw,126px);transition:opacity .36s ease,transform .72s cubic-bezier(.2,.74,.18,1)}
-.window-stage.is-open .window-content{opacity:0;transform:translateY(18px) scale(.985);pointer-events:none}
-.pick-center{width:min(100%,920px);margin:auto;padding:0}
-.pick-center h1{margin:0 0 44px;font:400 clamp(62px,11.4vw,144px)/.88 var(--window-serif);letter-spacing:-.065em}
-.window-pick-list{border-top:1px solid var(--ink)}
-.window-pick-list .picks-row{display:grid;grid-template-columns:78px 112px minmax(0,1fr) minmax(112px,.35fr) 24px;align-items:center;gap:22px;min-height:142px;padding:18px 0;border-bottom:1px solid rgba(21,21,21,.28);text-decoration:none}
-.window-pick-list .picks-category{margin:0;color:#636360;font:600 10px/1.4 var(--font-mono);letter-spacing:.1em;text-transform:uppercase}
-.window-pick-list .picks-cover,.window-pick-list .picks-cover-empty{width:104px;height:104px;object-fit:cover;background:#e4e4e0}
-.window-pick-list .picks-name{margin:0;font-size:clamp(23px,3vw,36px);font-weight:500;letter-spacing:-.035em;line-height:1.2}
-.window-pick-list .picks-creator{margin:0;color:#686865;font-size:14px}
-.window-pick-list .picks-open{justify-self:end;color:#555;font-size:20px;transition:transform .2s ease}
-.window-pick-list .picks-row:hover .picks-open{transform:translate(4px,-4px)}
-.window-stage:focus-visible::after{outline:2px solid var(--ink);outline-offset:-5px}
-.window-stage.is-pressed .shutter{filter:brightness(.985)}.window-stage.is-open::after{opacity:0}
-body.is-open .window-stage{pointer-events:none;visibility:hidden;transition:visibility 0s linear 1.3s}
-body.is-closed .window-stage{visibility:visible;transition:visibility 0s}
-.water-canvas{position:fixed;z-index:1001;inset:0;width:100vw;height:100vh;opacity:.9;mix-blend-mode:multiply;pointer-events:none}
-@media(max-width:700px){
- .window-stage::after{inset:9px}.shutter{width:50.35%;-webkit-backdrop-filter:blur(30px) saturate(.22);backdrop-filter:blur(30px) saturate(.22);box-shadow:inset -1px 0 rgba(15,15,15,.2),inset 0 0 0 8px rgba(255,255,255,.4)}
- .shutter-right{box-shadow:inset 1px 0 rgba(15,15,15,.2),inset 0 0 0 8px rgba(255,255,255,.4)}.shutter::before,.shutter::after{inset:17px}
- .window-content{padding:30px 26px}.pick-center{padding:12px 0}.pick-center h1{margin-bottom:32px;font-size:clamp(64px,15vw,100px)}
- .window-pick-list .picks-row{grid-template-columns:46px 60px minmax(0,1fr) minmax(58px,.42fr) 18px;gap:9px;min-height:88px;padding:12px 0}
- .window-pick-list .picks-category{font-size:9px;letter-spacing:.04em}.window-pick-list .picks-cover,.window-pick-list .picks-cover-empty{width:56px;height:56px}
- .window-pick-list .picks-name{font-size:clamp(17px,5vw,23px)}.window-pick-list .picks-creator{overflow:hidden;font-size:11px;text-overflow:ellipsis;white-space:nowrap}.window-pick-list .picks-open{font-size:17px}
+/* Weekly Picks opens like a printed folio: matte paper, ink, and one blue rule. */
+body.is-closed { overflow: hidden; }
+body.is-open { overflow-x: hidden; overflow-y: auto; }
+.window-stage {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  overflow: hidden;
+  perspective: 1500px;
+  background: var(--paper);
+  cursor: pointer;
 }
-@media(max-width:390px){
- .window-content{padding-inline:20px}.window-pick-list .picks-row{grid-template-columns:42px 52px minmax(64px,1fr) minmax(48px,.38fr) 16px;gap:7px}
- .window-pick-list .picks-cover,.window-pick-list .picks-cover-empty{width:49px;height:49px}.window-pick-list .picks-name{font-size:16px}.window-pick-list .picks-creator{font-size:10px}
+.window-stage::after {
+  position: absolute;
+  inset: 14px;
+  z-index: 4;
+  border: 1px solid rgba(23, 26, 30, .22);
+  content: "";
+  pointer-events: none;
+  transition: opacity .35s ease;
 }
-@media(prefers-reduced-motion:reduce){.window-stage *, .window-stage *::before, .window-stage *::after, .water-canvas{transition-duration:.01ms!important;animation-duration:.01ms!important}}
-
-
-/* Four Weekly Picks rows fit within the opening window. */
-@media (min-width: 701px) {
-  .window-content { padding-block: clamp(20px, 3.4vh, 36px); }
-  .pick-center h1 { margin-bottom: clamp(16px, 2.8vh, 28px); font-size: clamp(54px, 9vh, 108px); }
+.shutter {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 50.15%;
+  transform: rotateY(0);
+  transform-origin: left center;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  border-right: 1px solid var(--line);
+  background: var(--paper);
+  transition: transform .92s cubic-bezier(.2, .7, .2, 1);
+}
+.shutter::before {
+  position: absolute;
+  inset: 24px;
+  border: 1px solid rgba(23, 26, 30, .2);
+  content: "";
+}
+.shutter::after {
+  position: absolute;
+  inset: 24px;
+  background-image:
+    linear-gradient(90deg, transparent calc(50% - .5px), rgba(23, 26, 30, .16) 50%, transparent calc(50% + .5px)),
+    linear-gradient(0deg, transparent calc(50% - .5px), rgba(23, 26, 30, .16) 50%, transparent calc(50% + .5px));
+  content: "";
+}
+.shutter-right {
+  inset: 0 0 0 auto;
+  transform-origin: right center;
+  border-right: 0;
+  border-left: 1px solid var(--line);
+}
+.window-stage.is-open .shutter-left { transform: rotateY(-100deg); }
+.window-stage.is-open .shutter-right { transform: rotateY(100deg); }
+.window-content {
+  position: absolute;
+  z-index: 5;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(28px, 4vh, 48px) clamp(28px, 8vw, 120px);
+  transition: opacity .28s ease, transform .62s cubic-bezier(.2, .7, .2, 1);
+}
+.window-stage.is-open .window-content {
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+}
+.pick-center { width: min(100%, 1000px); margin: auto; }
+.pick-center h1 {
+  margin: 0 0 clamp(18px, 2.5vh, 28px);
+  color: var(--ink);
+  font: 400 clamp(58px, 8.5vh, 104px)/.96 var(--font-literary);
+  letter-spacing: -.045em;
+}
+.window-pick-list { border-top: 1px solid var(--accent); }
+.window-pick-list .picks-row {
+  display: grid;
+  grid-template-columns: 82px 78px minmax(0, 1fr) minmax(120px, .38fr) 24px;
+  align-items: center;
+  gap: clamp(12px, 1.8vw, 22px);
+  min-height: clamp(84px, 11vh, 104px);
+  padding: 8px 0;
+  border-bottom: 1px solid var(--line);
+  text-decoration: none;
+}
+.window-pick-list .picks-category {
+  margin: 0;
+  color: var(--accent);
+  font: 600 10px/1.4 var(--font-mono);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.window-pick-list .picks-cover,
+.window-pick-list .picks-cover-empty {
+  width: 72px;
+  height: 72px;
+  background: transparent;
+}
+.window-pick-list .picks-cover { object-fit: contain; }
+.window-pick-list .picks-name {
+  margin: 0;
+  font-size: clamp(21px, 2.5vw, 31px);
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+.window-pick-list .picks-creator {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.45;
+}
+.window-pick-list .picks-open {
+  justify-self: end;
+  color: var(--accent);
+  font-size: 20px;
+  transition: transform .18s ease;
+}
+.window-pick-list .picks-row:hover .picks-open { transform: translate(3px, -3px); }
+.window-pick-list .picks-row:hover .picks-name { color: var(--accent); }
+.window-stage:focus-visible::after { outline: 2px solid var(--accent); outline-offset: -5px; }
+.window-stage.is-open::after { opacity: 0; }
+body.is-open .window-stage {
+  pointer-events: none;
+  visibility: hidden;
+  transition: visibility 0s linear .94s;
+}
+body.is-closed .window-stage { visibility: visible; }
+@media (max-width: 700px) {
+  .window-stage::after { inset: 9px; }
+  .shutter::before, .shutter::after { inset: 17px; }
+  .window-content { padding: 26px 22px; }
+  .pick-center h1 { margin-bottom: 20px; font-size: clamp(56px, 12vw, 84px); }
   .window-pick-list .picks-row {
-    grid-template-columns: 78px 82px minmax(0, 1fr) minmax(112px, .35fr) 24px;
-    gap: clamp(12px, 1.8vw, 22px);
-    min-height: clamp(80px, 11vh, 104px);
+    grid-template-columns: 46px 56px minmax(0, 1fr) minmax(58px, .42fr) 18px;
+    gap: 9px;
+    min-height: 78px;
     padding: 8px 0;
   }
-  .window-pick-list .picks-cover, .window-pick-list .picks-cover-empty { width: 72px; height: 72px; }
-  .window-pick-list .picks-name { font-size: clamp(21px, 2.8vw, 32px); }
+  .window-pick-list .picks-category { font-size: 9px; letter-spacing: .03em; }
+  .window-pick-list .picks-cover,
+  .window-pick-list .picks-cover-empty { width: 52px; height: 52px; }
+  .window-pick-list .picks-name { font-size: clamp(16px, 4.5vw, 21px); }
+  .window-pick-list .picks-creator {
+    overflow: hidden;
+    font-size: 11px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .window-pick-list .picks-open { font-size: 17px; }
+}
+@media (max-width: 390px) {
+  .window-content { padding-inline: 18px; }
+  .window-pick-list .picks-row {
+    grid-template-columns: 42px 50px minmax(58px, 1fr) minmax(48px, .38fr) 16px;
+    gap: 7px;
+  }
+  .window-pick-list .picks-cover,
+  .window-pick-list .picks-cover-empty { width: 48px; height: 48px; }
+  .window-pick-list .picks-name { font-size: 15px; }
+  .window-pick-list .picks-creator { font-size: 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .window-stage *,
+  .window-stage *::before,
+  .window-stage *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
 }
