@@ -10,6 +10,7 @@
     <link rel="canonical" href="{{ page.url | replace: 'index.html', '' | absolute_url }}">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✦</text></svg>">
     <link rel="stylesheet" href="{{ '/assets/css/personal.css' | relative_url }}?v={{ asset_version }}">
+    <link rel="stylesheet" href="{{ '/assets/css/page-comfort.css' | relative_url }}?v={{ asset_version }}">
     <script defer src="{{ '/assets/js/typewriter.js' | relative_url }}?v={{ asset_version }}"></script>
     {% if page.guess %}<script defer src="{{ '/assets/js/guess.js' | relative_url }}?v={{ asset_version }}"></script>{% endif %}
   </head>
@@ -30,6 +31,12 @@
     </header>
 
     <main class="site-frame" id="main-content">
+      {% unless page.url == '/' %}
+      <a class="page-back" href="{{ '/' | relative_url }}" aria-label="返回主页">
+        <span class="page-back-arrow" aria-hidden="true">←</span>
+        <span>Home</span>
+      </a>
+      {% endunless %}
       {{ content }}
     </main>
 
