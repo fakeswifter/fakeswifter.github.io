@@ -370,6 +370,20 @@ body.is-open { overflow-x: hidden; overflow-y: auto; }
   pointer-events: none;
 }
 .pick-center { width: min(100%, 1000px); margin: auto; }
+.weekly-picks-intro {
+  max-width: 680px;
+  margin: 0 0 clamp(18px, 2.4vh, 26px);
+  color: var(--muted);
+  font-size: clamp(.9rem, 1.1vw, 1.02rem);
+  line-height: 1.75;
+}
+.weekly-issue-intro {
+  max-width: 680px;
+  margin: 30px auto 24px;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.8;
+}
 .pick-center h1 {
   margin: 0 0 clamp(18px, 2.5vh, 28px);
   color: var(--ink);
