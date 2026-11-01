@@ -8,6 +8,7 @@ layout: personal
     <h1 aria-label="{{ page.title | escape }}"><span class="typewriter" data-typewriter aria-hidden="true">{{ page.title | escape }}</span></h1>
     <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%B %d, %Y" }}</time>
   </header>
+  {% if page.intro %}<p class="weekly-issue-intro">{{ page.intro | escape }}</p>{% endif %}
   {% include weekly-pick-list.liquid issue=page %}
   {% if content != empty %}<div class="weekly-issue-copy">{{ content }}</div>{% endif %}
 </article>
