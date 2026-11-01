@@ -13,12 +13,12 @@
 .page-back-arrow { display: inline-block; transition: transform .18s ease; }
 .page-back:hover .page-back-arrow { transform: translateX(-3px); }
 
-.window-pick-list .weekly-picks-intro {
+.window-stage .weekly-picks-intro {
   max-width: 680px;
   margin: 0 auto clamp(28px, 4vh, 42px);
   text-align: center;
 }
-.window-pick-list .pick-center h1 {
+.window-stage .pick-center > h1 {
   margin-inline: auto;
   margin-bottom: clamp(24px, 3vh, 34px);
   text-align: center;
@@ -29,11 +29,11 @@
 }
 
 @media (max-width: 700px) {
-  .window-pick-list .weekly-picks-intro {
+  .window-stage .weekly-picks-intro {
     margin-bottom: 26px;
     line-height: 1.7;
   }
-  .window-pick-list .pick-center h1 { margin-bottom: 26px; }
+  .window-stage .pick-center > h1 { margin-bottom: 26px; }
   .window-pick-list .picks-row {
     min-height: 88px;
     padding-block: 13px;
