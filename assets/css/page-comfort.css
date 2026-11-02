@@ -14,29 +14,115 @@
 .page-back:hover .page-back-arrow { transform: translateX(-3px); }
 
 .window-stage .weekly-picks-intro {
-  max-width: 680px;
-  margin: 0 auto clamp(46px, 5vh, 56px);
+  max-width: 720px;
+  margin: 0 auto clamp(42px, 5vh, 54px);
+  color: var(--ink);
+  font-size: clamp(1.3rem, 2.15vw, 1.8rem);
+  line-height: 1.7;
   text-align: center;
 }
 .window-stage .pick-center > h1 {
-  margin-inline: auto;
-  margin-bottom: clamp(38px, 4vh, 46px);
+  margin: 0 auto 20px;
+  color: var(--muted);
+  font: 500 clamp(1rem, 1.4vw, 1.22rem)/1.35 var(--font-mono);
+  letter-spacing: .08em;
   text-align: center;
+  text-transform: uppercase;
 }
 .window-pick-list .picks-row {
-  min-height: clamp(120px, 15vh, 140px);
-  padding-block: 19px;
+  grid-template-columns: 82px 88px minmax(0, 1fr) minmax(120px, .38fr) 24px;
+  min-height: clamp(132px, 16vh, 148px);
+  padding-block: 20px;
+}
+.window-pick-list .picks-cover,
+.window-pick-list .picks-cover-empty {
+  width: 80px;
+  height: 80px;
 }
 
 @media (max-width: 700px) {
   .window-stage .weekly-picks-intro {
+    max-width: 34ch;
     margin-bottom: 34px;
-    line-height: 1.7;
+    font-size: clamp(1.16rem, 5vw, 1.38rem);
+    line-height: 1.65;
   }
-  .window-stage .pick-center > h1 { margin-bottom: 32px; }
+  .window-stage .pick-center > h1 {
+    margin-bottom: 18px;
+    font-size: 1rem;
+  }
   .window-pick-list .picks-row {
+    grid-template-columns: 42px 56px minmax(58px, 1fr) minmax(48px, .38fr) 16px;
     min-height: 104px;
+    gap: 7px;
     padding-block: 16px;
+  }
+  .window-pick-list .picks-cover,
+  .window-pick-list .picks-cover-empty {
+    width: 52px;
+    height: 52px;
+  }
+}
+
+/* Let the current artwork supply the soft colors behind the Picks cover. */
+.window-stage {
+  isolation: isolate;
+  background: #f7f7f6;
+}
+.artwork-atmosphere {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  filter: blur(82px) saturate(1.35);
+  opacity: .62;
+  pointer-events: none;
+}
+.artwork-atmosphere-image {
+  position: absolute;
+  display: block;
+  width: min(78vw, 940px);
+  max-width: none;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.artwork-atmosphere-image:nth-child(1) {
+  top: -24vh;
+  left: -20vw;
+}
+.artwork-atmosphere-image:nth-child(2) {
+  right: -20vw;
+  bottom: -24vh;
+}
+.artwork-atmosphere-image:nth-child(n + 3) {
+  top: 28vh;
+  left: 37vw;
+  width: min(54vw, 680px);
+  opacity: .78;
+}
+.window-stage::before {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background: linear-gradient(115deg, rgba(250, 250, 250, .58), rgba(250, 250, 250, .38) 48%, rgba(250, 250, 250, .58));
+  content: "";
+  pointer-events: none;
+}
+
+@media (max-width: 700px) {
+  .artwork-atmosphere { filter: blur(66px) saturate(1.28); opacity: .64; }
+  .artwork-atmosphere-image { width: min(112vw, 600px); }
+  .artwork-atmosphere-image:nth-child(1) { top: -16vh; left: -38vw; }
+  .artwork-atmosphere-image:nth-child(2) { right: -36vw; bottom: -16vh; }
+  .artwork-atmosphere-image:nth-child(n + 3) {
+    top: 36vh;
+    left: 22vw;
+    width: min(76vw, 420px);
+  }
+  .window-stage::before {
+    background: linear-gradient(160deg, rgba(250, 250, 250, .62), rgba(250, 250, 250, .36) 52%, rgba(250, 250, 250, .6));
   }
 }
 
@@ -55,7 +141,8 @@
   transform: translateY(-5px);
   pointer-events: none;
 }
-.window-stage.is-open::after { opacity: 0; }
+.window-stage.is-open::after,
+.window-stage.is-open::before { opacity: 0; }
 body.is-open .window-stage {
   pointer-events: none;
   visibility: hidden;

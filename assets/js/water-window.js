@@ -5,6 +5,24 @@
   const body = document.body;
   if (!stage || !home) return;
 
+  const covers = Array.from(stage.querySelectorAll(".window-pick-list .picks-cover")).slice(0, 3);
+  if (covers.length) {
+    const atmosphere = document.createElement("div");
+    atmosphere.className = "artwork-atmosphere";
+    atmosphere.setAttribute("aria-hidden", "true");
+
+    covers.forEach(function (cover) {
+      const colorField = cover.cloneNode();
+      colorField.className = "artwork-atmosphere-image";
+      colorField.alt = "";
+      colorField.loading = "eager";
+      colorField.decoding = "async";
+      atmosphere.appendChild(colorField);
+    });
+
+    stage.insertBefore(atmosphere, stage.firstChild);
+  }
+
   let isOpen = false;
 
   function setHidden(element, hidden) {
