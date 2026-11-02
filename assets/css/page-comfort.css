@@ -39,3 +39,44 @@
     padding-block: 16px;
   }
 }
+
+/* Keep the full-screen Picks cover, but reveal the profile with a simple dissolve. */
+.window-stage {
+  perspective: none;
+  opacity: 1;
+  transition: opacity .32s ease, visibility 0s linear .32s;
+}
+.window-content {
+  transition: opacity .22s ease, transform .22s ease;
+}
+.window-stage.is-open { opacity: 0; }
+.window-stage.is-open .window-content {
+  opacity: 0;
+  transform: translateY(-5px);
+  pointer-events: none;
+}
+.window-stage.is-open::after { opacity: 0; }
+body.is-open .window-stage {
+  pointer-events: none;
+  visibility: hidden;
+  transition: opacity .32s ease, visibility 0s linear .32s;
+}
+body.is-closed .window-stage {
+  opacity: 1;
+  visibility: visible;
+}
+#hero-title:focus,
+#hero-title:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .window-stage,
+  .window-stage *,
+  .window-stage::before,
+  .window-stage::after {
+    transition-duration: .01ms !important;
+    transition-delay: 0s !important;
+  }
+}
