@@ -46,4 +46,6 @@
       enterHomepage();
     }
   });
+
+  if (window.location.hash === "#homepage") enterHomepage();
 })();
