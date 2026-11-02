@@ -15,27 +15,27 @@
 
 .window-stage .weekly-picks-intro {
   max-width: 680px;
-  margin: 0 auto clamp(28px, 4vh, 42px);
+  margin: 0 auto clamp(46px, 5vh, 56px);
   text-align: center;
 }
 .window-stage .pick-center > h1 {
   margin-inline: auto;
-  margin-bottom: clamp(24px, 3vh, 34px);
+  margin-bottom: clamp(38px, 4vh, 46px);
   text-align: center;
 }
 .window-pick-list .picks-row {
-  min-height: clamp(104px, 13vh, 120px);
-  padding-block: 14px;
+  min-height: clamp(120px, 15vh, 140px);
+  padding-block: 19px;
 }
 
 @media (max-width: 700px) {
   .window-stage .weekly-picks-intro {
-    margin-bottom: 26px;
+    margin-bottom: 34px;
     line-height: 1.7;
   }
-  .window-stage .pick-center > h1 { margin-bottom: 26px; }
+  .window-stage .pick-center > h1 { margin-bottom: 32px; }
   .window-pick-list .picks-row {
-    min-height: 88px;
-    padding-block: 13px;
+    min-height: 104px;
+    padding-block: 16px;
   }
 }
