@@ -17,7 +17,7 @@
   <body>
     <header class="site-header">
       <div class="site-frame site-nav">
-        <a class="site-mark" href="{{ '/' | relative_url }}" aria-label="fakeswifter 首页">
+        <a class="site-mark" href="{{ '/' | relative_url }}#homepage" aria-label="fakeswifter 个人主页">
           fakeswifter
         </a>
         <nav aria-label="主导航">
@@ -32,7 +32,7 @@
 
     <main class="site-frame" id="main-content">
       {% unless page.url == '/' %}
-      <a class="page-back" href="{{ '/' | relative_url }}" aria-label="返回主页">
+      <a class="page-back" href="{{ '/' | relative_url }}#homepage" aria-label="返回个人主页">
         <span class="page-back-arrow" aria-hidden="true">←</span>
         <span>Home</span>
       </a>
