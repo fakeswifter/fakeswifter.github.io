@@ -299,7 +299,7 @@ a:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
 }
 
 
-/* Weekly Picks opens like a printed folio: matte paper, ink, and one blue rule. */
+/* Weekly Picks cover and profile reveal. */
 body.is-closed { overflow: hidden; }
 body.is-open { overflow-x: hidden; overflow-y: auto; }
 .window-stage {
@@ -307,7 +307,6 @@ body.is-open { overflow-x: hidden; overflow-y: auto; }
   z-index: 1000;
   inset: 0;
   overflow: hidden;
-  perspective: 1500px;
   background: var(--paper);
   cursor: pointer;
 }
@@ -320,40 +319,6 @@ body.is-open { overflow-x: hidden; overflow-y: auto; }
   pointer-events: none;
   transition: opacity .35s ease;
 }
-.shutter {
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: 50.15%;
-  transform: rotateY(0);
-  transform-origin: left center;
-  transform-style: preserve-3d;
-  backface-visibility: hidden;
-  border-right: 1px solid var(--line);
-  background: var(--paper);
-  transition: transform .92s cubic-bezier(.2, .7, .2, 1);
-}
-.shutter::before {
-  position: absolute;
-  inset: 24px;
-  border: 1px solid rgba(17, 17, 17, .2);
-  content: "";
-}
-.shutter::after {
-  position: absolute;
-  inset: 24px;
-  background-image:
-    linear-gradient(90deg, transparent calc(50% - .5px), rgba(17, 17, 17, .16) 50%, transparent calc(50% + .5px)),
-    linear-gradient(0deg, transparent calc(50% - .5px), rgba(17, 17, 17, .16) 50%, transparent calc(50% + .5px));
-  content: "";
-}
-.shutter-right {
-  inset: 0 0 0 auto;
-  transform-origin: right center;
-  border-right: 0;
-  border-left: 1px solid var(--line);
-}
-.window-stage.is-open .shutter-left { transform: rotateY(-100deg); }
-.window-stage.is-open .shutter-right { transform: rotateY(100deg); }
 .window-content {
   position: absolute;
   z-index: 5;
@@ -446,7 +411,6 @@ body.is-open .window-stage {
 body.is-closed .window-stage { visibility: visible; }
 @media (max-width: 700px) {
   .window-stage::after { inset: 9px; }
-  .shutter::before, .shutter::after { inset: 17px; }
   .window-content { padding: 26px 22px; }
   .pick-center h1 { margin-bottom: 20px; font-size: clamp(56px, 12vw, 84px); }
   .window-pick-list .picks-row {
