@@ -9,7 +9,10 @@ description: fakeswifter 的每周书影音分享与个人主页。
   <div class="window-content"><div class="pick-center">
     <h1 id="weekly-picks-title">Weekly Picks</h1>
     {% if current_issue and current_issue.intro %}
-    <p class="weekly-picks-intro">{{ current_issue.intro | escape }}</p>
+    <div class="weekly-picks-intro">
+      <p class="weekly-picks-copy">{{ current_issue.intro | escape }}</p>
+      <span class="weekly-picks-scroll" aria-hidden="true">↓</span>
+    </div>
     {% endif %}
     <div class="picks-list window-pick-list">
       {% if current_issue and current_issue.picks %}
